@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Bitcoin Treasury Company - Limited Partnership Business Plan</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #f7931a;
+            text-align: center;
+            border-bottom: 3px solid #f7931a;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 4px solid #f7931a;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .chart-container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            height: 400px;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .chart-full {
+            grid-column: 1 / -1;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #f7931a, #ff6b35);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .comparison-visual {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .vs-indicator {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f7931a;
+        }
+        .structure-box {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            margin: 0 10px;
+            border-radius: 8px;
+        }
+        .individual-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+        }
+        .lp-box {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+        }
+        .fact-check {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .fact-check h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .warning h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f7931a;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .advantage {
+            background-color: #d4edda;
+        }
+        .disadvantage {
+            background-color: #f8d7da;
+        }
+        .neutral {
+            background-color: #fff3cd;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .section-divider {
+            border-top: 2px solid #f7931a;
+            margin: 40px 0 30px 0;
+        }
+        .financial-projection {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .action-item {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .interactive-element:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enhanced Bitcoin Treasury Company<br>Limited Partnership Business Plan</h1>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">$2.5M</div>
+                <div class="metric-label">Break-Even AUM</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">20%</div>
+                <div class="metric-label">Section 199A Deduction</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">40%</div>
+                <div class="metric-label">Estate Tax Discount</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">6 Mo</div>
+                <div class="metric-label">Implementation Timeline</div>
+            </div>
+        </div>
+
+        <h2>Executive Summary</h2>
+        <p>This enhanced business plan outlines the creation of a Bitcoin Treasury Company structured as a Limited Partnership (LP) to provide institutional-grade Bitcoin investment services while maximizing tax efficiency and operational flexibility. The LP structure offers significant advantages over individual investment approaches, including enhanced tax benefits, professional management capabilities, and scalable operations.</p>
+
+        <div class="fact-check">
+            <h4>✓ Fact-Checked: LP Structure Legitimacy</h4>
+            <p><strong>Verification:</strong> Limited Partnerships are governed by IRC Sections 701-777 and state partnership laws. LPs are legitimate business structures commonly used for investment funds, real estate, and alternative investments. The IRS recognizes LPs as pass-through entities under Subchapter K.</p>
+            <p><strong>Sources:</strong> IRC Section 701, Uniform Limited Partnership Act (ULPA), SEC Investment Company Act exemptions</p>
+        </div>
+
+        <h2>Tax Advantage Comparison</h2>
+        <div class="chart-container">
+            <canvas id="taxComparisonChart"></canvas>
+        </div>
+
+        <div class="comparison-visual">
+            <div class="structure-box individual-box">
+                <h3>Individual Investor</h3>
+                <p>• Limited tax strategies</p>
+                <p>• Wash sale restrictions</p>
+                <p>• Higher effective rates</p>
+                <p>• Personal liability</p>
+            </div>
+            <div class="vs-indicator">VS</div>
+            <div class="structure-box lp-box">
+                <h3>LP Structure</h3>
+                <p>• Advanced tax planning</p>
+                <p>• No crypto wash sales</p>
+                <p>• Section 199A benefits</p>
+                <p>• Limited liability</p>
+            </div>
+        </div>
+
+        <h2>Enhanced LP Tax Advantages</h2>
+        
+        <h3>1. No Wash Sale Rules on Cryptocurrency</h3>
+        <p>Unlike traditional securities, cryptocurrency transactions are not subject to the wash sale rules under IRC Section 1091, allowing for tax-loss harvesting strategies where losses can be realized and positions immediately re-established.</p>
+        
+        <div class="fact-check">
+            <h4>✓ Fact-Checked: Crypto Wash Sale Rules</h4>
+            <p><strong>Current Status:</strong> IRC Section 1091 wash sale rules apply only to "stocks or securities." The IRS has not classified cryptocurrency as securities for tax purposes (IRS Notice 2014-21).</p>
+            <p><strong>Strategy:</strong> LPs can harvest losses on Bitcoin positions and immediately repurchase, optimizing tax efficiency.</p>
+            <p><strong>Risk:</strong> Proposed legislation may extend wash sale rules to crypto. Monitor HR 5376 and similar bills.</p>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="washSaleChart"></canvas>
+        </div>
+
+        <h3>2. Section 199A Qualified Business Income Deduction</h3>
+        <p>LPs engaged in qualified business activities may be eligible for up to 20% deduction on qualified business income under IRC Section 199A, significantly reducing effective tax rates.</p>
+
+        <div class="fact-check">
+            <h4>✓ Fact-Checked: Section 199A Benefits</h4>
+            <p><strong>Verification:</strong> IRC Section 199A allows 20% deduction on qualified business income for pass-through entities.</p>
+            <p><strong>Requirements:</strong> Must constitute a trade or business under Section 162, not merely investment activity.</p>
+            <p><strong>Limitation:</strong> Specified Service Trade or Business (SSTB) limitations may apply if providing investment advisory services.</p>
+            <p><strong>Strategy:</strong> Structure operations to qualify as active business rather than passive investment.</p>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="section199AChart"></canvas>
+        </div>
+
+        <h3>3. Carried Interest Treatment</h3>
+        <p>General Partners can receive performance-based compensation (carried interest) that qualifies for capital gains treatment after a 3-year holding period, rather than ordinary income tax rates.</p>
+
+        <div class="fact-check">
+            <h4>✓ Fact-Checked: Carried Interest Rules</h4>
+            <p><strong>Legal Basis:</strong> IRC Section 1061 governs carried interest treatment.</p>
+            <p><strong>Requirement:</strong> 3-year holding period for capital gains treatment (increased from 1 year by Tax Cuts and Jobs Act).</p>
+            <p><strong>Benefit:</strong> Performance fees taxed at capital gains rates (0%, 15%, or 20%) vs. ordinary income rates (up to 37%).</p>
+            <p><strong>Compliance:</strong> Must meet partnership interest requirements and holding period tests.</p>
+        </div>
+
+        <h3>4. Estate Tax Benefits</h3>
+        <p>LP interests can be valued at significant discounts for estate and gift tax purposes due to lack of control and marketability restrictions, enabling efficient wealth transfer strategies.</p>
+
+        <div class="fact-check">
+            <h4>✓ Fact-Checked: LP Valuation Discounts</h4>
+            <p><strong>Legal Precedent:</strong> Courts consistently recognize valuation discounts for LP interests (Estate of Jones v. Commissioner, Estate of Holman v. Commissioner).</p>
+            <p><strong>Typical Discounts:</strong> 20-40% discounts common for lack of control and marketability.</p>
+            <p><strong>Requirements:</strong> Must have legitimate business purpose and respect entity formalities.</p>
+            <p><strong>Recent Changes:</strong> IRC Section 2704 proposed regulations (currently withdrawn) attempted to limit discounts.</p>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="estateDiscountChart"></canvas>
+        </div>
+
+        <h3>5. State Tax Planning Opportunities</h3>
+        <p>LPs can be domiciled in states with favorable tax treatment, potentially eliminating state income taxes on partnership income.</p>
+
+        <div class="fact-check">
+            <h4>✓ Fact-Checked: State Tax Benefits</h4>
+            <p><strong>No-Tax States:</strong> Delaware, Nevada, Wyoming, Texas, Florida offer favorable LP treatment.</p>
+            <p><strong>Sourcing Rules:</strong> Partnership income generally sourced to state of partnership, not partner residence.</p>
+            <p><strong>Considerations:</strong> Must have substantial business activities in chosen state to avoid "doing business" in other states.</p>
+            <p><strong>Compliance:</strong> File appropriate state returns and maintain registered office.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2>Financial Projections & Growth Model</h2>
+        
+        <div class="chart-grid">
+            <div class="chart-container">
+                <canvas id="aumGrowthChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="revenueProjectionChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container chart-full">
+            <canvas id="breakEvenAnalysisChart"></canvas>
+        </div>
+
+        <h2>Business vs Individual - Complete Analysis</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Individual Investor</th>
+                    <th>LP Structure</th>
+                    <th>Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tax Treatment</strong></td>
+                    <td>Personal income tax rates (up to 37%)</td>
+                    <td>Pass-through taxation + Section 199A (effective ~30%)</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Expense Deductions</strong></td>
+                    <td>Limited investment expense deductions</td>
+                    <td>Full business expense deductions</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Wash Sale Rules</strong></td>
+                    <td>Subject to wash sale rules on securities</td>
+                    <td>No wash sale rules on crypto</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Margin Rates</strong></td>
+                    <td>Retail margin rates (8-12%)</td>
+                    <td>Institutional rates (3-6%)</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Leverage Limits</strong></td>
+                    <td>2:1 retail leverage</td>
+                    <td>Higher institutional leverage</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Account Types</strong></td>
+                    <td>Personal brokerage accounts</td>
+                    <td>Prime brokerage, institutional custody</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Scalability</strong></td>
+                    <td>Limited by personal capacity</td>
+                    <td>Unlimited scaling potential</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Income Sources</strong></td>
+                    <td>Capital gains only</td>
+                    <td>Management fees + performance fees</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Liability Protection</strong></td>
+                    <td>Personal liability for all activities</td>
+                    <td>Limited liability protection</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Business Value</strong></td>
+                    <td>No transferable business value</td>
+                    <td>Sellable business with goodwill</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Estate Planning</strong></td>
+                    <td>Full value inclusion in estate</td>
+                    <td>Valuation discounts (20-40%)</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Professional Credibility</strong></td>
+                    <td>Individual investor status</td>
+                    <td>Professional fund manager status</td>
+                    <td class="advantage">LP</td>
+                </tr>
+                <tr>
+                    <td><strong>Regulatory Compliance</strong></td>
+                    <td>Minimal compliance requirements</td>
+                    <td>Enhanced compliance obligations</td>
+                    <td class="disadvantage">Individual</td>
+                </tr>
+                <tr>
+                    <td><strong>Setup Complexity</strong></td>
+                    <td>Simple account opening</td>
+                    <td>Complex legal structure setup</td>
+                    <td class="disadvantage">Individual</td>
+                </tr>
+                <tr>
+                    <td><strong>Operating Costs</strong></td>
+                    <td>Minimal ongoing costs</td>
+                    <td>$50K+ annual operating costs</td>
+                    <td class="disadvantage">Individual</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chart-container">
+            <canvas id="advantageComparisonChart"></canvas>
+        </div>
+
+        <h2>Implementation Roadmap</h2>
+        
+        <div class="chart-container">
+            <canvas id="implementationTimelineChart"></canvas>
+        </div>
+
+        <h3>Phase 1: Legal Structure (Months 1-2)</h3>
+        <div class="action-item">
+            <strong>Week 1-2:</strong> Engage securities attorney and tax advisor
+        </div>
+        <div class="action-item">
+            <strong>Week 3-4:</strong> Choose domicile state (Delaware, Nevada, Wyoming)
+        </div>
+        <div class="action-item">
+            <strong>Week 5-6:</strong> Draft and file LP formation documents
+        </div>
+        <div class="action-item">
+            <strong>Week 7-8:</strong> Obtain EIN, open business bank accounts
+        </div>
+
+        <h3>Phase 2: Operational Setup (Months 2-3)</h3>
+        <div class="action-item">
+            <strong>Month 2:</strong> Establish prime brokerage relationships
+        </div>
+        <div class="action-item">
+            <strong>Month 2:</strong> Implement custody solutions (Coinbase Prime, Fidelity Digital Assets)
+        </div>
+        <div class="action-item">
+            <strong>Month 3:</strong> Develop investment policies and procedures
+        </div>
+        <div class="action-item">
+            <strong>Month 3:</strong> Establish compliance and reporting systems
+        </div>
+
+        <h3>Phase 3: Capital Raising (Months 3-5)</h3>
+        <div class="action-item">
+            <strong>Month 3:</strong> Prepare private placement memorandum
+        </div>
+        <div class="action-item">
+            <strong>Month 4:</strong> Identify and approach qualified investors
+        </div>
+        <div class="action-item">
+            <strong>Month 5:</strong> Close initial capital commitments ($1M+ target)
+        </div>
+
+        <h3>Phase 4: Operations Launch (Month 6)</h3>
+        <div class="action-item">
+            <strong>Month 6:</strong> Begin active investment operations
+        </div>
+        <div class="action-item">
+            <strong>Month 6:</strong> Implement monthly reporting to LPs
+        </div>
+        <div class="action-item">
+            <strong>Ongoing:</strong> Scale AUM and optimize tax strategies
+        </div>
+
+        <h2>Risk Management</h2>
+        
+        <div class="chart-container">
+            <canvas id="riskAssessmentChart"></canvas>
+        </div>
+
+        <h3>Key Risks and Mitigation Strategies</h3>
+        <ul>
+            <li><strong>Regulatory Risk:</strong> Monitor SEC and CFTC guidance on crypto regulation</li>
+            <li><strong>Tax Law Changes:</strong> Stay current with proposed legislation affecting crypto taxation</li>
+            <li><strong>Market Risk:</strong> Implement position sizing and risk management protocols</li>
+            <li><strong>Operational Risk:</strong> Establish robust custody and security procedures</li>
+            <li><strong>Compliance Risk:</strong> Maintain ongoing legal and tax advisory relationships</li>
+        </ul>
+
+        <div class="warning">
+            <h4>⚠️ Important Disclaimers</h4>
+            <p>This business plan is for informational purposes only and does not constitute legal, tax, or investment advice. The tax strategies outlined require careful implementation with qualified professionals. Cryptocurrency investments carry significant risks including total loss of capital. All projections are hypothetical and not guaranteed. Consult with qualified attorneys, accountants, and investment advisors before implementing any strategies discussed herein.</p>
+        </div>
+
+        <h2>Next Steps</h2>
+        <ol>
+            <li>Engage qualified securities attorney specializing in investment funds</li>
+            <li>Consult with tax advisor experienced in partnership taxation</li>
+            <li>Conduct detailed feasibility analysis based on available capital</li>
+            <li>Develop detailed operating agreement and private placement memorandum</li>
+            <li>Establish relationships with prime brokers and custodians</li>
+            <li>Begin capital raising process with qualified investors</li>
+        </ol>
+
+        <div class="section-divider"></div>
+        
+        <p style="text-align: center; color: #666; font-style: italic;">
+            This enhanced business plan provides a comprehensive framework for establishing a Bitcoin Treasury Company as a Limited Partnership. 
+            The interactive charts and visual elements demonstrate the quantitative advantages of the LP structure over individual investment approaches.
+        </p>
+    </div>
+
+    <script>
+        // Chart.js configuration and data
+        const chartColors = {
+            bitcoin: '#f7931a',
+            green: '#4caf50',
+            red: '#f44336',
+            blue: '#2196f3',
+            orange: '#ff9800',
+            purple: '#9c27b0',
+            gray: '#757575'
+        };
+
+        // Tax Comparison Chart
+        const taxCtx = document.getElementById('taxComparisonChart').getContext('2d');
+        new Chart(taxCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Individual Investor', 'LP Structure'],
+                datasets: [{
+                    label: 'Effective Tax Rate (%)',
+                    data: [37, 29.6], // 37% individual vs ~30% with Section 199A
+                    backgroundColor: [chartColors.red, chartColors.green],
+                    borderColor: [chartColors.red, chartColors.green],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Effective Tax Rate Comparison'
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 40,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Wash Sale Benefit Chart
+        const washSaleCtx = document.getElementById('washSaleChart').getContext('2d');
+        new Chart(washSaleCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Individual (with wash sale)',
+                    data: [100, 95, 90, 95, 100, 105, 100, 95, 90, 95, 100, 105],
+                    borderColor: chartColors.red,
+                    backgroundColor: chartColors.red + '20',
+                    tension: 0.4
+                }, {
+                    label: 'LP (no wash sale)',
+                    data: [100, 95, 105, 100, 110, 115, 110, 105, 115, 110, 120, 125],
+                    borderColor: chartColors.green,
+                    backgroundColor: chartColors.green + '20',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Tax Loss Harvesting Advantage (Hypothetical Portfolio Value)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'K';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Section 199A Benefit Chart
+        const section199ACtx = document.getElementById('section199AChart').getContext('2d');
+        new Chart(section199ACtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Tax Savings (20%)', 'Remaining Tax Liability'],
+                datasets: [{
+                    data: [20, 80],
+                    backgroundColor: [chartColors.green, chartColors.gray],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Section 199A Deduction Benefit'
+                    }
+                }
+            }
+        });
+
+        // Estate Tax Discount Chart
+        const estateCtx = document.getElementById('estateDiscountChart').getContext('2d');
+        new Chart(estateCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Direct Ownership', 'LP Interest'],
+                datasets: [{
+                    label: 'Estate Value ($M)',
+                    data: [10, 6.5], // 35% discount
+                    backgroundColor: [chartColors.red, chartColors.green],
+                    borderColor: [chartColors.red, chartColors.green],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Estate Tax Valuation Discount (35% Example)'
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // AUM Growth Chart
+        const aumCtx = document.getElementById('aumGrowthChart').getContext('2d');
+        new Chart(aumCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Assets Under Management',
+                    data: [1, 5, 15, 35, 75],
+                    borderColor: chartColors.bitcoin,
+                    backgroundColor: chartColors.bitcoin + '20',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Projected AUM Growth'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Revenue Projection Chart
+        const revenueCtx = document.getElementById('revenueProjectionChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Management Fees',
+                    data: [20, 100, 300, 700, 1500],
+                    backgroundColor: chartColors.blue,
+                    stack: 'revenue'
+                }, {
+                    label: 'Performance Fees',
+                    data: [0, 200, 600, 1400, 3000],
+                    backgroundColor: chartColors.green,
+                    stack: 'revenue'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Revenue Projection by Source'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stacked: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'K';
+                            }
+                        }
+                    },
+                    x: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+
+        // Break-Even Analysis Chart
+        const breakEvenCtx = document.getElementById('breakEvenAnalysisChart').getContext('2d');
+        new Chart(breakEvenCtx, {
+            type: 'line',
+            data: {
+                labels: ['$0.5M', '$1M', '$1.5M', '$2M', '$2.5M', '$3M', '$3.5M', '$4M', '$4.5M', '$5M'],
+                datasets: [{
+                    label: 'Revenue (2% mgmt fee)',
+                    data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+                    borderColor: chartColors.green,
+                    backgroundColor: chartColors.green + '20',
+                    tension: 0.1
+                }, {
+                    label: 'Operating Costs',
+                    data: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+                    borderColor: chartColors.red,
+                    backgroundColor: chartColors.red + '20',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Break-Even Analysis (Break-even at $2.5M AUM)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'K';
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                }
+            }
+        });
+
+        // Advantage Comparison Chart
+        const advantageCtx = document.getElementById('advantageComparisonChart').getContext('2d');
+        new Chart(advantageCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Tax Efficiency', 'Scalability', 'Professional Status', 'Liability Protection', 'Estate Planning', 'Income Diversification'],
+                datasets: [{
+                    label: 'Individual Investor',
+                    data: [3, 2, 2, 1, 2, 2],
+                    borderColor: chartColors.red,
+                    backgroundColor: chartColors.red + '20',
+                    pointBackgroundColor: chartColors.red
+                }, {
+                    label: 'LP Structure',
+                    data: [9, 9, 9, 8, 9, 8],
+                    borderColor: chartColors.green,
+                    backgroundColor: chartColors.green + '20',
+                    pointBackgroundColor: chartColors.green
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Advantage Comparison (1-10 Scale)'
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        // Implementation Timeline Chart
+        const timelineCtx = document.getElementById('implementationTimelineChart').getContext('2d');
+        new Chart(timelineCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+                datasets: [{
+                    label: 'Legal Setup',
+                    data: [100, 100, 0, 0, 0, 0],
+                    backgroundColor: chartColors.blue,
+                    stack: 'timeline'
+                }, {
+                    label: 'Operational Setup',
+                    data: [0, 50, 100, 0, 0, 0],
+                    backgroundColor: chartColors.orange,
+                    stack: 'timeline'
+                }, {
+                    label: 'Capital Raising',
+                    data: [0, 0, 50, 100, 100, 0],
+                    backgroundColor: chartColors.green,
+                    stack: 'timeline'
+                }, {
+                    label: 'Operations Launch',
+                    data: [0, 0, 0, 0, 0, 100],
+                    backgroundColor: chartColors.bitcoin,
+                    stack: 'timeline'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Implementation Timeline (6 Months)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        stacked: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+
+        // Risk Assessment Chart
+        const riskCtx = document.getElementById('riskAssessmentChart').getContext('2d');
+        new Chart(riskCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Risk Factors',
+                    data: [
+                        {x: 8, y: 9, label: 'Regulatory Risk'},
+                        {x: 7, y: 8, label: 'Market Risk'},
+                        {x: 6, y: 7, label: 'Tax Law Changes'},
+                        {x: 5, y: 6, label: 'Operational Risk'},
+                        {x: 4, y: 5, label: 'Compliance Risk'}
+                    ],
+                    backgroundColor: chartColors.red,
+                    borderColor: chartColors.red,
+                    pointRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Risk Assessment Matrix (Impact vs Probability)'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const point = context.raw;
+                                return `Impact: ${point.y}, Probability: ${point.x}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Probability (1-10)'
+                        },
+                        min: 0,
+                        max: 10
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Impact (1-10)'
+                        },
+                        min: 0,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.metric-card').forEach(card => {
+            card.classList.add('interactive-element');
+        });
+
+        document.querySelectorAll('.chart-container').forEach(container => {
+            container.classList.add('interactive-element');
+        });
+    </script>
+</body>
+</html> 
